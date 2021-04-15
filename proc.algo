@@ -1,0 +1,58 @@
+PROCEDURE dot_product (V1,V2)
+VAR
+  V1:vect1 : ARRAY_OF INTEGER[50];
+  V2:vect2: ARRAY_OF INTEGER[50];
+  i:INTEGER:=0;
+  var ps:INTEGER:=0;
+ 
+
+BEGIN
+ FOR i FROM  0 TO V1.length-1 STEP 1 DO
+ ps:= ps+V1[i]*V2[i];
+ END_FOR
+ END
+
+//
+
+ALGORITHM orthogonal
+VAR
+    V1:vect1 : ARRAY_OF INTEGER[50];
+    V2:vect2: ARRAY_OF INTEGER[50];
+    n,i,j,k:INTEGER:=0;
+
+BEGIN
+    read(n)
+    FOR k FROM 0 to n-1 DO
+        FOR i FROM 0 TO n-1   DO
+        read (V1[i])
+        END_FOR
+
+        FOR j FROM 0 TO n-1   DO
+        read(V2[j])
+        END_FOR
+
+       dot_product(V1,V2)
+       IF (ps=0) THEN
+        write (orthogonal)
+       ELSE 
+       write (not orthogonal)
+
+       END_IF
+    END FOR
+END
+//
+
+FUNCTION dot_product (V1,V2): INTEGER
+VAR
+  V1:Vect1 : ARRAY_OF INTEGER[50];
+  V2:vect1:: ARRAY_OF INTEGER[50];
+  i:INTEGER:=0;
+  var ps:INTEGER:=0;
+
+BEGIN
+ FOR i FROM  0 TO V1.length-1 STEP 1 DO
+ ps:= ps+V1[i]*V2[i];
+ END_FOR
+ RETURN ps ;
+ END
+
